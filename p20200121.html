@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20200121</title>
+</head>
+<body>
+
+	<audio id="selfie">
+		<source src="https://media.merriam-webster.com/soundc11/s/selfie_1.wav" type="audio/wav">
+	</audio>
+	<p>Click the buttons to play the audio.</p>
+	<button onclick="playAudio()" type="button">Play Audio</button>
+
+	<script>
+		var x = document.getElementById("selfie");
+		function playAudio(){
+			x.play();
+		}
+	</script>
+</body>
+</html>
