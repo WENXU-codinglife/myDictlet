@@ -7,14 +7,28 @@
 </head>
 <body>
 
-	<audio id="selfie">
-		<source src="https://media.merriam-webster.com/soundc11/s/selfie_1.wav" type="audio/wav">
+	<audio id="gourmet">
+		<source src="https://media.merriam-webster.com/soundc11/g/gourme01.wav" type="audio/wav">
 	</audio>
 	<p>Click the buttons to play the audio.</p>
 	<button onclick="playAudio()" type="button">Play Audio</button>
 
 	<script>
-		var x = document.getElementById("selfie");
+		var x = document.getElementById("gourmet");
+		function playAudio(){
+			x.play();
+		}
+	</script>
+
+
+	<audio id="extrapolate">
+		<source src="https://media.merriam-webster.com/soundc11/e/extrap01.wav" type="audio/wav">
+	</audio>
+	<p>Click the buttons to play the audio.</p>
+	<button onclick="playAudio()" type="button">Play Audio</button>
+
+	<script>
+		var x = document.getElementById("extrapolate");
 		function playAudio(){
 			x.play();
 		}

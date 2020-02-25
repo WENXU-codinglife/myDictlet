@@ -3,6 +3,6 @@ import json
 import json5
 
 
-r = data.extr('selfie')
+r = data.extr('extrapolate')
 print(r)
 
