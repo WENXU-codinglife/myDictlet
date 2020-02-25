@@ -3,6 +3,6 @@ import json
 import json5
 
 
-r = data.extr('extrapolate')
+r = data.extr('anomaly')
 print(r)
 

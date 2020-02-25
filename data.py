@@ -9,5 +9,5 @@ def extr(word_id):
 	url = 'https://www.dictionaryapi.com/api/v3/references/collegiate/json/' + word_id + '?key=' + app_key
 	r = requests.get(url)
 	audio = r.json()[0]['hwi']['prs'][0]['sound']['audio']
-	rcs = "https://media.merriam-webster.com/soundc11/s/" + audio + ".wav"
+	rcs = "https://media.merriam-webster.com/soundc11/" + word_id[0] + "/" + audio + ".wav"
 	return rcs

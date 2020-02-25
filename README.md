@@ -9,11 +9,15 @@ Request API Key(2): Collegiate Thesaurus<br/>
 LOG:<br/>
 20200221:<br/>
 
-    data.py: retrieve .json by using API<br/>
-    index.html: date list of links to redirect to (date)-pages<br/>
-    (date).html: button responding a click to play pronounce<br/>
+1. data.py: retrieve .json by using API;
+2.index.html: date list of links to redirect to (date)-pages;
+3. (date).html: button responding a click to play pronounce.
 
 20200222:<br/>
 
-    1. Succeed in picking the "audio" key out from the json provided by the API.
-    2. fuction 'extr(word_id)' can return the url of audio file (.wav)
+1. Succeed in picking the "audio" key out from the json provided by the API;
+2. fuction 'extr(word_id)' can return the url of audio file (.wav).
+
+20200225:<br/>
+1. The functions "playAudio" works, so all the buttons are able to use the this function to play the pronouciation of each distinctively;
+2. Fix the url of the audio file in data.py.
