@@ -21,3 +21,6 @@ LOG:<br/>
 20200225:<br/>
 1. The functions "playAudio" works, so all the buttons are able to use the this function to play the pronouciation of each distinctively;
 2. Fix the url of the audio file in data.py.
+
+20200226:<br/>
+1. Extract the definitions and store them in a list;

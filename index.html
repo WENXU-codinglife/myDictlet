@@ -9,32 +9,21 @@
     </head>
     <body>
         <h1 style="text-align:center;">
-            Content
+            MyDictlet
         </h1>
 
+        <form action="/action_page.php">
+          <label for="new_word">Enter the word you want to know:</label>
+          <input type="text" id="new_word" name="fname">
+          <input type="submit" value="Submit">
+        </form>
+        
+        <p>***Click the "Submit" button and the form-data will be sent to a page on the 
+        server called "action_page.php".***</p>
 
 
-        <div class = "everyday">
-          
-          <div class="word_1">
-            <audio id="selfie">
-              <source src="https://media.merriam-webster.com/soundc11/s/selfie_1.wav" type="audio/wav">
-            </audio>
-            <p>Click the buttons to play the audio.</p>
-            <button onclick="playAudio()" type="button">Play Audio</button>
-          
-            <script>
-              var x = document.getElementById("selfie");
-              function playAudio(){
-                x.play();
-              }
-            </script>
-
-          </div>
-
-
-        </div>
-
-
+        <a href="p20200225.html" style="text-align: center;">
+          2020-02-25
+        </a>
     </body>
 </html>

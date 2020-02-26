@@ -3,6 +3,7 @@ import json
 import json5
 
 
-r = data.extr('anomaly')
-print(r)
+aud, defi = data.extr('anomaly')
+print(aud)
+print(defi)
 

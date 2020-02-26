@@ -1,0 +1,138 @@
+[
+  {
+    "meta": {
+      "id": "anomaly",
+      "uuid": "62065ab8-9c36-4e5f-a979-09c143c2d277",
+      "sort": "012938000",
+      "src": "collegiate",
+      "section": "alpha",
+      "stems": [
+        "anomalies",
+        "anomaly"
+      ],
+      "offensive": false
+    },
+    "hwi": {
+      "hw": "anom*a*ly",
+      "prs": [
+        {
+          "mw": "\u0259-\u02c8n\u00e4-m\u0259-l\u0113",
+          "sound": {
+            "audio": "anomal02",
+            "ref": "c",
+            "stat": "1"
+          }
+        }
+      ]
+    },
+    "fl": "noun",
+    "ins": [
+      {
+        "il": "plural",
+        "ifc": "-lies",
+        "if": "anom*a*lies"
+      }
+    ],
+    "def": [
+      {
+        "sseq": [
+          [
+            [
+              "sense",
+              {
+                "sn": "1",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}something different, abnormal, peculiar, or not easily classified {bc}something {d_link|anomalous|anomalous} "
+                  ],
+                  [
+                    "vis",
+                    [
+                      {
+                        "t": "They regarded the test results as an {wi}anomaly{/wi}."
+                      }
+                    ]
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "2",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}deviation from the common rule {bc}{sx|irregularity||}"
+                  ]
+                ]
+              }
+            ]
+          ],
+          [
+            [
+              "sense",
+              {
+                "sn": "3",
+                "dt": [
+                  [
+                    "text",
+                    "{bc}the angular distance of a planet from its {d_link|perihelion|perihelion} as seen from the sun"
+                  ]
+                ]
+              }
+            ]
+          ]
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "t": "Eleven minutes may not sound like much when you're waiting for a table at your favorite restaurant, but in the course of centuries, eleven minutes and change become a formidable chunk of time. By the 1300s, those superfluous minutes had added up to hours, then days, then more than a week. The calendar was losing time, irrevocably, to the \"real\" year, slipping further and further behind in its measurement of the earth's orbit. {qword}Anomalies{/qword} began to creep into what had been the certainties of life. The spring equinox\u2014one of two moments in the year when day and night are of equal length all over the earth, and which occurs on or about March 21\u2014began to fall on March 16, then 15, then 14.",
+        "aq": {
+          "auth": "Michelle Stacey",
+          "source": "{it}Harper's{/it}",
+          "aqdate": "December 2006"
+        }
+      },
+      {
+        "t": "Californians aren't the only ones vexed by rolling brownouts and other power-supply {qword}anomalies{/qword}. Everyday power spikes, surges, sags, and line noise cause computers, stereo equipment, televisions, telephones, and other delicate electronic equipment to go psychotic or have complete nervous breakdowns.",
+        "aq": {
+          "source": "{it}Fortune{/it}",
+          "aqdate": "25 June 2001"
+        }
+      },
+      {
+        "t": "In approximately 10% of patients, autism can be explained by genetic syndromes and known chromosomal {qword}anomalies{/qword} (most of which have recognizable features in addition to autism) \u2026",
+        "aq": {
+          "auth": "Lauren A. Weiss et al.",
+          "source": "{it}New England Journal of Medicine{/it}",
+          "aqdate": "14 Feb. 2008"
+        }
+      },
+      {
+        "t": "This policy may well have made sense back when steroid use was an {qword}anomaly{/qword}. Now that bulking up with chemical help seems to be more popular than ever, it's incumbent on baseball to take action.",
+        "aq": {
+          "auth": "Steve Kettman",
+          "source": "{it}New York Times{/it}",
+          "aqdate": "20 Aug. 2000"
+        }
+      }
+    ],
+    "et": [
+      [
+        "text",
+        "{dx_ety}see {dxt|anomalous||}{/dx_ety}"
+      ]
+    ],
+    "date": "1603{ds||3||}",
+    "shortdef": [
+      "something different, abnormal, peculiar, or not easily classified : something anomalous",
+      "deviation from the common rule : irregularity",
+      "the angular distance of a planet from its perihelion as seen from the sun"
+    ]
+  }
+]

@@ -8,8 +8,8 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/serverFind', methods=['POST'])
-def serverFind():
+@app.route('/lookup', methods=['POST'])
+def lookup():
     data.Find(request.form)
     return "ok"
 
