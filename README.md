@@ -10,7 +10,7 @@ LOG:<br/>
 20200221:<br/>
 
 1. data.py: retrieve .json by using API;
-2.index.html: date list of links to redirect to (date)-pages;
+2. index.html: date list of links to redirect to (date)-pages;
 3. (date).html: button responding a click to play pronounce.
 
 20200222:<br/>
@@ -28,3 +28,8 @@ LOG:<br/>
 20200229:<br/>
 1. Run the Server.py and activate the local web server;
 2. Load the content from a local json file by 'onclick' which makes a 'GET' request.
+
+
+NEXT TO DO:
+1. Google for 'handlebar.js';
+2. Try to use javascript to realize fetching json from API;
