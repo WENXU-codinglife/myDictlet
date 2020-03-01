@@ -30,6 +30,6 @@ LOG:<br/>
 2. Load the content from a local json file by 'onclick' which makes a 'GET' request.
 
 
-NEXT TO DO:
+ <mark>NEXT TO DO:</mark>
 1. Google for 'handlebar.js';
 2. Try to use javascript to realize fetching json from API;
