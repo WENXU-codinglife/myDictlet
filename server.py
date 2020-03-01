@@ -10,8 +10,8 @@ def index():
 
 @app.route('/lookup', methods=['POST'])
 def lookup():
-    data.Find(request.form)
-    return "ok"
+    aud, defi = data.extr(request.form)
+    return aud, defi
 
 #@app.route('/serverRetrieve', methods=['POST'])
 #def serverRetrieve():

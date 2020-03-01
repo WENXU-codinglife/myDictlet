@@ -1,6 +1,6 @@
 README.md<br/>
 
-[Merriam-Webster Developer Center](https://dictionaryapi.com)<br/>
+API: [Merriam-Webster Developer Center](https://dictionaryapi.com)<br/>
 Registration:<br/>
 E-mail: wenxuw@sfu.ca<br/>
 Request API Key(1): Collegiate Dictionary<br/>
@@ -24,3 +24,7 @@ LOG:<br/>
 
 20200226:<br/>
 1. Extract the definitions and store them in a list;
+
+20200229:<br/>
+1. Run the Server.py and activate the local web server;
+2. Load the content from a local json file by 'onclick' which makes a 'GET' request.

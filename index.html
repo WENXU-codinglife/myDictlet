@@ -12,18 +12,43 @@
             MyDictlet
         </h1>
 
-        <form action="/action_page.php">
-          <label for="new_word">Enter the word you want to know:</label>
-          <input type="text" id="new_word" name="fname">
-          <input type="submit" value="Submit">
-        </form>
-        
-        <p>***Click the "Submit" button and the form-data will be sent to a page on the 
-        server called "action_page.php".***</p>
 
+        <label for="new_word">Enter the word you want to know:</label>
+        <input type="text" id="new_word" name="fname">
+        <button type="button" onclick="loadDoc()">Lookup</button>
+
+        
+        <p>***Click the "Lookup" button and the form-data will be sent to a page on the 
+        server called "action_page.php".***</p>
+        
+        <p id="demo"></p>
 
         <a href="p20200225.html" style="text-align: center;">
           2020-02-25
         </a>
+    
+
+        <script>
+            var output = '1';
+            fetch("./anomaly.json")
+                .then(function(resp){
+                    return resp.json();
+                })
+                .then(function(data){
+                    output = data;
+                    console.log(output);
+                });
+            function loadDoc() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("demo").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "./anomaly.json", true);
+                xhttp.send();
+                
+            }
+        </script>
     </body>
 </html>
