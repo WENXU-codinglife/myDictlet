@@ -10,7 +10,7 @@ gunicorn = "*"
 django-heroku = "*"
 requests = "*"
 Django = "*"
-Flask = "*"
+flask = "*"
 
 [requires]
 python_version = "3.7"
