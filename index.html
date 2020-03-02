@@ -21,13 +21,62 @@
         <p>***Click the "Lookup" button and the form-data will be sent to a page on the 
         server called "action_page.php".***</p>
         
-        <p id="demo"></p>
+        <div id="demo" style="border: gray; background-color: honeydew;"></div>
 
         <a href="p20200225.html" style="text-align: center;">
           2020-02-25
         </a>
 
-        <script src="./main.js"></script>
+        <script>
+        var btn = document.getElementById("btn");
+        var app_key = 'c1f42caf-a67f-46b9-aba6-e14c23e777e5';
+        let aAudio = new Audio();
+
+        function extr(word) {
+            var request = new XMLHttpRequest()
+            var htmlText = '';
+            // Open a new connection, using the GET request on the URL endpoint
+            request.open('GET', 'https://www.dictionaryapi.com/api/v3/references/collegiate/json/' + word + '?key=' + app_key, true)
+
+            request.onload = function() {
+            // Begin accessing JSON data here
+                
+                var mydata = JSON.parse(this.responseText);
+                console.log(mydata);
+                let audio = mydata[0].hwi.prs[0].sound.audio;
+                let rcs = "https://media.merriam-webster.com/soundc11/" + word[0] + "/" + audio + ".wav";
+                aAudio = new Audio(rcs);
+
+                htmlText += '<a onclick="myAudioFunction();"> <img src = "./images/edifier.svg" style = "width = "15px"; height = "15px""> </img> </a>';
+                let index = 0;
+                for(let i = 0; i < mydata.length; i++){
+                    index = i + 1;
+                    //console.log('Sense ' + index + '\n');
+                    htmlText +='<p>' + 'Sense ' + index + '</p>';
+                    let jj = 0;
+                    for(let j = 0; j < mydata[i].shortdef.length; j++){
+                        //console.log(mydata[i].shortdef[j] + '\n');
+                        jj = j+1;
+                        htmlText +='<p>' + jj + '. ' +  mydata[i].shortdef[j] + '</p>';
+                        document.getElementById("demo").innerHTML = htmlText;
+                    }
+                }
+            }
+
+            // Send request
+            request.send()
+        }
+
+        function myAudioFunction() {
+            aAudio.play();
+        }
+
+        btn.addEventListener("click", function(){
+            var newword = document.getElementById("new_word").value;
+            let mydata = extr(newword);
+        });
+
+        </script>
 
     </body>
 </html>
