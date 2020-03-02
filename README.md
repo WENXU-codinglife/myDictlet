@@ -29,7 +29,12 @@ LOG:<br/>
 1. Run the Server.py and activate the local web server;
 2. Load the content from a local json file by 'onclick' which makes a 'GET' request.
 
+20200301:<br/>
+1. Use javascript to realize fetching json from API;
+2. finish the definition-presentation and sound-play on the index page.
 
  <mark>NEXT TO DO:</mark>
 1. Google for 'handlebar.js';
-2. Try to use javascript to realize fetching json from API;
+2. <del>Try to use javascript to realize fetching json from API;</del>
+3. Generate a new page (named after the corresponding date) as a daily flashcard by one click;
+4. Deploy on a web server;
