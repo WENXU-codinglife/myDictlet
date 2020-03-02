@@ -35,6 +35,6 @@ LOG:<br/>
 
  <mark>NEXT TO DO:</mark>
 1. Google for 'handlebar.js';
-2. <del>Try to use javascript to realize fetching json from API;</del>
+2. <del>Try to use javascript to realize fetching json from API;</del> - [x] 20200301
 3. Generate a new page (named after the corresponding date) as a daily flashcard by one click;
 4. Deploy on a web server;
