@@ -7,9 +7,6 @@ verify_ssl = true
 
 [packages]
 gunicorn = "*"
-django-heroku = "*"
-requests = "*"
-Django = "*"
 flask = "*"
 
 [requires]
