@@ -34,8 +34,13 @@ LOG:<br/>
 1. Use javascript to realize fetching json from API;
 2. finish the definition-presentation and sound-play on the index page.
 
+20200302:<br/>
+1. Deploy the app to Heroku.
+
  <mark>NEXT TO DO:</mark>
-1. Google for 'handlebar.js';
-2. - [x] 20200301 <del>Try to use javascript to realize fetching json from API;</del> 
-3. Generate a new page (named after the corresponding date) as a daily flashcard by one click;
-4. Deploy on a web server;
+- [ ] Google for 'handlebar.js';
+- [x] (20200301) Try to use javascript to realize fetching json from API; 
+- [ ] Generate a new page (named after the corresponding date) as a daily flashcard by one click;
+- [x] (20200302) Deploy on a web server;
+- [ ] Clearify the concepts, modules, etc. of Heroku: [Procfile](https://devcenter.heroku.com/articles/procfile), [gunicorn](https://gunicorn.org/);
+- [ ] Learn about tool of database: [pgAdmin](https://www.pgadmin.org/);
