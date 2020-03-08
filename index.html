@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
             FLASHCARD
             <meta charset="UTF-8">
@@ -16,6 +17,7 @@
         <p>Enter the word you want to know:</p>
         <input type="text" id="new_word">
         <button id = "btn">Lookup</button>
+        <button id = "add">Add to flashcard</button>
 
         
         <p>***Click the "Lookup" button and the form-data will be sent to a page on the 
@@ -27,7 +29,15 @@
           2020-02-25
         </a>
 
+		<!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
         <script>
+
+        //lookup
         var btn = document.getElementById("btn");
         var app_key = 'c1f42caf-a67f-46b9-aba6-e14c23e777e5';
         let aAudio = new Audio();
@@ -42,7 +52,7 @@
             // Begin accessing JSON data here
                 
                 var mydata = JSON.parse(this.responseText);
-                console.log(mydata);
+                //console.log(mydata);
                 let audio = mydata[0].hwi.prs[0].sound.audio;
                 let rcs = "https://media.merriam-webster.com/soundc11/" + word[0] + "/" + audio + ".wav";
                 aAudio = new Audio(rcs);
@@ -76,6 +86,34 @@
             let mydata = extr(newword);
         });
 
+
+        //add to flashcard
+        addtoflashcard = document.getElementById("add");
+        addtoflashcard.addEventListener("click", function(){
+            var newword = document.getElementById("new_word").value;
+            console.log(newword);
+            if(newword != ''){
+                $(document).ready(function() {
+                    var qurl="/flashcard";
+                    $.ajax({
+                        type: "POST",
+                        cache: false,
+                        data:{keyword:newword},
+                        url: qurl,
+                        dataType: "json",
+                        success: function(response) { 
+                            console.log(response);                    
+                        },
+                        error: function(response) {
+                            console.log(error); 
+                        }
+                    })
+                });
+            }
+            else{
+                alert("Please enter the word that you want to add!");
+            };
+        })
         </script>
 
     </body>
