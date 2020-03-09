@@ -37,15 +37,18 @@ LOG:<br/>
 20200302:<br/>
 1. Deploy the app to Heroku.
 
+20200306:<br/>
+1. Switch the deployment source from Heroku git to github.
+
 20200309:<br/>
 1. Postgres.app has been installed locally.
-2. Database has been created for 'mydicelet-0' and works. **bold (BUT VALUES OF 'DATE' ATTRIBUTE SEEM WRONG)**
+2. Database has been created for 'mydicelet-0' and works. **(BUT VALUES OF 'DATE' ATTRIBUTE SEEM WRONG)**
+3. Store and retrieve data on and from database.
+4. Generate the flashcard list on 'index.html' automatically, which redirect to 'flashcard.html', according to the data passed from backend.
 
- <mark>NEXT TO DO:</mark>
+ <mark>RELEVANT STUFFS TO LEARN:</mark>
 - [ ] Google for 'handlebar.js';
 - [x] (20200301) Try to use javascript to realize fetching json from API; 
-- [ ] Generate a new page (named after the corresponding date) as a daily flashcard by one click;
 - [x] (20200302) Deploy on a web server;
 - [ ] Clearify the concepts, modules, etc. of Heroku: [Procfile](https://devcenter.heroku.com/articles/procfile), [gunicorn](https://gunicorn.org/);
-- [ ] Learn about tool of database: [pgAdmin](https://www.pgadmin.org/);
-- [x] (20200309) Database has been created and works.
+- [ ] Learn about: [pgAdmin](https://www.pgadmin.org/),[postgresql](https://www.postgresql.org/);

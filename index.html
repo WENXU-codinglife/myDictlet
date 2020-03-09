@@ -8,7 +8,7 @@
             <meta charset="UTF-8">
         </title>
     </head>
-    <body>
+    <body onload="loadlabels()">
         <h1 style="text-align:center;">
             MyDictlet
         </h1>
@@ -25,15 +25,43 @@
         
         <div id="demo" style="border: gray; background-color: honeydew;"></div>
 
-        <a href="p20200225.html" style="text-align: center;">
-          2020-02-25
-        </a>
+        <div>flashcard</div>
+        <div id = "labelofcard"></div>
 
 		<!-- Scripts -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
+
+        <script>
+        // load labels of flashcards
+        function loadlabels(){
+            console.log("loadlabels");
+            $(document).ready(function() {
+                var qurl="/passmelabels";
+                $.ajax({
+                    type: "POST",
+                    cache: false,
+                    data:{keyword:'passmelabels'},
+                    url: qurl,
+                    dataType: "json",
+                    //not understand what the codes are for
+                    success: function(response) { 
+                        console.log(response);   
+                        let n = response["count"];
+                        for(let i = 0; i < n; i++){
+                            htmlText = "<a href='./flashcard.html'>" + response["dates"][i] + "</a>" + "\n";
+                        } 
+                        document.getElementById("labelofcard").innerHTML = htmlText;
+                    },
+                    error: function(response) {
+                        console.log(error); 
+                    }
+                })
+            });
+        }
+        </script>
 
         <script>
 

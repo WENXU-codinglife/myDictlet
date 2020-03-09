@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy import func, distinct
 import datetime
 from pytz import timezone
 #import data
@@ -29,6 +30,21 @@ class FLASHCARD(db.Model):
 def index():
     return render_template('index.html')
 
+@app.route('/passmelabels', methods=['POST'])
+def passmelabels():
+    #db.session.query(FLASHCARD).filter(FLASHCARD.word == newword).count() == 0:
+    numberofcards = db.session.query(func.count(distinct(FLASHCARD.date))).count()
+    labels = db.session.query(distinct(FLASHCARD.date)).all() # labels is a list of result objects
+    print(numberofcards)
+    passedlabels = []
+    for i in labels:
+        passedlabels.append(i[0])
+    #print(passedlabels)
+    ret = {
+        "count":numberofcards,
+        "dates":passedlabels
+        }
+    return ret
 
 @app.route('/flashcard', methods=['POST'])
 def flashcard():
