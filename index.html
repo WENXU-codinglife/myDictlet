@@ -90,7 +90,8 @@
         //add to flashcard
         addtoflashcard = document.getElementById("add");
         addtoflashcard.addEventListener("click", function(){
-            var newword = document.getElementById("new_word").value;
+            var newword =  document.getElementById("new_word").value;
+            newword = newword.toLowerCase();
             console.log(newword);
             if(newword != ''){
                 $(document).ready(function() {
