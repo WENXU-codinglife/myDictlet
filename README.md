@@ -37,6 +37,10 @@ LOG:<br/>
 20200302:<br/>
 1. Deploy the app to Heroku.
 
+20200309:<br/>
+1. Postgres.app has been installed locally.
+2. Database has been created for 'mydicelet-0' and works. **bold (BUT VALUES OF 'DATE' ATTRIBUTE SEEM WRONG)**
+
  <mark>NEXT TO DO:</mark>
 - [ ] Google for 'handlebar.js';
 - [x] (20200301) Try to use javascript to realize fetching json from API; 
@@ -44,3 +48,4 @@ LOG:<br/>
 - [x] (20200302) Deploy on a web server;
 - [ ] Clearify the concepts, modules, etc. of Heroku: [Procfile](https://devcenter.heroku.com/articles/procfile), [gunicorn](https://gunicorn.org/);
 - [ ] Learn about tool of database: [pgAdmin](https://www.pgadmin.org/);
+- [x] (20200309) Database has been created and works.
