@@ -33,8 +33,9 @@ def index():
 @app.route('/passmelabels', methods=['POST'])
 def passmelabels():
     #db.session.query(FLASHCARD).filter(FLASHCARD.word == newword).count() == 0:
-    numberofcards = db.session.query(func.count(distinct(FLASHCARD.date))).count()
+    #numberofcards = db.session.query(func.count(distinct(FLASHCARD.date))).count()
     labels = db.session.query(distinct(FLASHCARD.date)).all() # labels is a list of result objects
+    numberofcards = len(labels)
     print(numberofcards)
     passedlabels = []
     for i in labels:
@@ -61,8 +62,9 @@ def flashcard():
         data = FLASHCARD(today,newword)
         db.session.add(data)
         db.session.commit()
-    
-    return 'ok'
+        ret = {"feedback": True}
+    return ret
+
 
 if __name__ == '__main__':
 	# Bind to PORT if defined, otherwise default to 5000.

@@ -48,10 +48,11 @@
                     dataType: "json",
                     //not understand what the codes are for
                     success: function(response) { 
-                        console.log(response);   
+                        console.log(response);  
+                        let htmlText = '' 
                         let n = response["count"];
                         for(let i = 0; i < n; i++){
-                            htmlText = "<a href='./flashcard.html'>" + response["dates"][i] + "</a>" + "\n";
+                            htmlText = htmlText + "<div><a href='./flashcard.html'>" + response["dates"][i] + "</a></div>";
                         } 
                         document.getElementById("labelofcard").innerHTML = htmlText;
                     },
@@ -132,7 +133,14 @@
                         dataType: "json",
                         //not understand what the codes are for
                         success: function(response) { 
-                            console.log(response);                    
+                            console.log(response);
+                            if(response['feedback']){
+                                if (confirm("The word '" + newword +"' has been added successfully!")) { 
+                                } else {
+                                } 
+                            }else{
+                                alert("WOOPS! There is something wrong!");
+                            }
                         },
                         error: function(response) {
                             console.log(error); 
