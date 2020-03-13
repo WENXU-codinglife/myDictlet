@@ -12,46 +12,49 @@
 
 
 
+		<!-- Scripts -->
+        <script src="../assets/js/jquery.min.js"></script>
+        <script src="../assets/js/skel.min.js"></script>
+        <script src="../assets/js/util.js"></script>
+        <script src="../assets/js/main.js"></script>
 
+        <script>
 
-    <script>
+            function ini_page(){
+                var date = getUrlVars();
+                //console.log(date);
+                $(document).ready(function() {
+                    var qurl="/fetchwords";
+                    $.ajax({
+                        type: "POST",
+                        cache: false,
+                        data:{keyword:date},
+                        url: qurl,
+                        dataType: "json",
+                        //not understand what the codes are for
+                        success: function(response) { 
+                            console.log(response); 
+                            let htmlText = '' 
+                            document.getElementById("labelofcard").innerHTML = htmlText;
+                        },
+                        error: function(response) {
+                            console.log(error); 
+                        }
+                    })
+                });
 
-        function ini_page(){
-            var date = getUrlVars();
-            console.log(date);
-/*            $(document).ready(function() {
-                var qurl="/fetchwords";
-                $.ajax({
-                    type: "POST",
-                    cache: false,
-                    data:{keyword:date},
-                    url: qurl,
-                    dataType: "json",
-                    //not understand what the codes are for
-                    success: function(response) { 
-                        console.log(response); 
-                        let htmlText = '' 
-                        document.getElementById("labelofcard").innerHTML = htmlText;
-                    },
-                    error: function(response) {
-                        console.log(error); 
-                    }
-                })
-            });*/
-
-        }
-
-        function getUrlVars() {
-            var ret = '';
-            var parts = window.location.href;
-
-            let i = 52;
-            while(i < 62){
-                ret = ret + parts[i];
-                i++;
             }
-            return ret;
-        }
-    </script>
+
+            function getUrlVars() {
+                var ret = '';
+                var parts = window.location.href;
+                let i = 52;
+                while(i < 62){
+                    ret = ret + parts[i];
+                    i++;
+                }
+                return ret;
+            }
+        </script>
 </body>
 </html>
