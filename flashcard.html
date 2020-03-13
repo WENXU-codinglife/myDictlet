@@ -44,10 +44,11 @@
         function getUrlVars() {
             var ret = '';
             var parts = window.location.href;
-            for(let i = 0; i < parts.length();i++){
-                if(i >= 52){
-                    ret = ret + parts[i];
-                }
+
+            let i = 52;
+            while(i < 62){
+                ret = ret + parts[i];
+                i++;
             }
             return ret;
         }
