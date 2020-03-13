@@ -42,9 +42,14 @@
         }
 
         function getUrlVars() {
-            var vars = {};
+            var ret = '';
             var parts = window.location.href;
-            return parts;
+            for(let i = 0; i < parts.length();i++){
+                if(i >= 52){
+                    ret = ret + parts[i];
+                }
+            }
+            return ret;
         }
     </script>
 </body>
