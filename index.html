@@ -48,11 +48,12 @@
                     dataType: "json",
                     //not understand what the codes are for
                     success: function(response) { 
-                        console.log(response);  
+                        console.log(response); 
                         let htmlText = '' 
                         let n = response["count"];
+                        let iidd = response["dates"];
                         for(let i = 0; i < n; i++){
-                            htmlText = htmlText + "<div><a href='./flashcard.html'>" + response["dates"][i] + "</a></div>";
+                            htmlText = htmlText + "<div id = '" + response['dates'][i] + "'><a  href='./flashcard.html/?x="+response['dates'][i]+"'>" + response['dates'][i] + "</a></div>";
                         } 
                         document.getElementById("labelofcard").innerHTML = htmlText;
                     },
@@ -62,6 +63,11 @@
                 })
             });
         }
+        </script>
+
+        <script>
+            // for the click on the links to individual flashcard.html
+
         </script>
 
         <script>

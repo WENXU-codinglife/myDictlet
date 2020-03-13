@@ -5,16 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLASHCARD</title>
 </head>
-<body>
-    <div id = "date"></div>
+<body onload="ini_page()">
+    <h1 id = "headone">TEXT</h1>
 
+    <div id = "d"></div>
 
 
 
 
 
     <script>
-        
+        var date = '';
+        function ini_page(){
+            date = getUrlVars()["x"];
+            console.log(date);
+/*            $(document).ready(function() {
+                var qurl="/fetchwords";
+                $.ajax({
+                    type: "POST",
+                    cache: false,
+                    data:{keyword:date},
+                    url: qurl,
+                    dataType: "json",
+                    //not understand what the codes are for
+                    success: function(response) { 
+                        console.log(response); 
+                        let htmlText = '' 
+                        document.getElementById("labelofcard").innerHTML = htmlText;
+                    },
+                    error: function(response) {
+                        console.log(error); 
+                    }
+                })
+            });*/
+
+        }
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href;
+            return vars;
+        }
     </script>
 </body>
 </html>

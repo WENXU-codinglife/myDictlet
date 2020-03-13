@@ -45,7 +45,15 @@ def passmelabels():
         "count":numberofcards,
         "dates":passedlabels
         }
+    print(ret)
     return ret
+
+@app.route('/fetchwords',methods=['POST'])
+def fetchwords():
+    date = request.form['keyword']
+    words = db.session.query(FLASHCARD).filter(FLASHCARD.date == date).all()
+    #print(words)
+    return words
 
 @app.route('/flashcard', methods=['POST'])
 def flashcard():
