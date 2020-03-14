@@ -51,6 +51,7 @@ def passmelabels():
 @app.route('/fetchwords',methods=['POST'])
 def fetchwords():
     date = request.form['keyword']
+    print(date)
     words = []
     lBooks = db.session.query(FLASHCARD)  #returns a Query object. 
     for oBook in lBooks:
