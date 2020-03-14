@@ -85,7 +85,6 @@
 
             request.onload = function() {
             // Begin accessing JSON data here
-                
                 var mydata = JSON.parse(this.responseText);
                 //console.log(mydata);
                 let audio = mydata[0].hwi.prs[0].sound.audio;

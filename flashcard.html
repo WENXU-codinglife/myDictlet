@@ -21,20 +21,29 @@
         <script>
 
             function ini_page(){
-                var date = getUrlVars();
-                console.log(date);
+                var loc = window.location.href;
+                console.log(loc);
                 $(document).ready(function() {
                     var qurl="/fetchwords";
                     $.ajax({
                         type: "POST",
                         cache: false,
-                        data:{keyword:date},
+                        data:{keyword:loc},
                         url: qurl,
                         dataType: "json",
                         //not understand what the codes are for
                         success: function(response) { 
                             //console.log(response); 
-                            let htmlText = response['words'] 
+                            let num = response['number'];
+                            console.log(num);
+                            let htmlText = '';
+                            for(let i = 0; i < num; i++){
+                                console.log(response['words'][i]);
+                                htmlText += '<div>' + response['words'][i] +
+                                '<a onclick="myAudioFunction(\'' + response['words'][i] + '\');"> ' +
+                                ' <img src = "../images/edifier.svg" style = "width = "15px"; height = "15px""> </img> </a>' +
+                                '<button id = "' + response['words'][i] + '">Lookup</button>' + '</div>'
+                            }
                             document.getElementById("box").innerHTML = htmlText;
                         },
                         error: function(response) {
@@ -42,26 +51,12 @@
                         }
                     })
                 });
-
             }
 
-            function getUrlVars() {
-                let EVN = false;
-                var ret = '';
-                var parts = window.location.href;
-                let i = 52;
-                let j = 62;
-                if (EVN) {
-                    i = 40;
-                    j = 50;
-                }
-                
-                while(i < j){
-                    ret = ret + parts[i];
-                    i++;
-                }
-                //console.log(ret)
-                return ret;
+            function myAudioFunction(rcs){
+                rcs = 'https://media.merriam-webster.com/soundc11/e/extrap01.wav';
+                let aAudio = new Audio(rcs);
+                aAudio.play();
             }
         </script>
 </body>
