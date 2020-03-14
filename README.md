@@ -46,6 +46,10 @@ LOG:<br/>
 3. Store and retrieve data on and from database.
 4. Generate the flashcard list on 'index.html' automatically, which redirect to 'flashcard.html', according to the data passed from backend.
 
+20200313:<br/>
+1. Redirect from the links on 'index.html' to 'flashcard.html', passing the 'date' as parameter.
+2. By loading page 'flashcard.html', the words can show up, accociated with 'edifier.svg' and 'lookup.button'.
+
  <mark>RELEVANT STUFFS TO LEARN:</mark>
 - [ ] Google for 'handlebar.js';
 - [x] (20200301) Try to use javascript to realize fetching json from API; 
