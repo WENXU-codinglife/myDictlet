@@ -51,9 +51,13 @@ def passmelabels():
 @app.route('/fetchwords',methods=['POST'])
 def fetchwords():
     date = request.form['keyword']
-    words = db.session.query(FLASHCARD).filter(FLASHCARD.date == date).all()
-    #print(words)
-    return words
+    words = []
+    lBooks = db.session.query(FLASHCARD)  #returns a Query object. 
+    for oBook in lBooks:
+        if oBook.date == date:
+            words.append(oBook.word)
+    ret = {'number':len(words),'words':words}
+    return ret
 
 @app.route('/flashcard', methods=['POST'])
 def flashcard():

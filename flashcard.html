@@ -8,7 +8,7 @@
 <body onload="ini_page()">
     <h1 id = "headone">TEXT</h1>
 
-    <div id = "d"></div>
+    <div id = "box"></div>
 
 
 
@@ -22,7 +22,7 @@
 
             function ini_page(){
                 var date = getUrlVars();
-                //console.log(date);
+                console.log(date);
                 $(document).ready(function() {
                     var qurl="/fetchwords";
                     $.ajax({
@@ -33,9 +33,9 @@
                         dataType: "json",
                         //not understand what the codes are for
                         success: function(response) { 
-                            console.log(response); 
-                            let htmlText = '' 
-                            document.getElementById("labelofcard").innerHTML = htmlText;
+                            //console.log(response); 
+                            let htmlText = response['words'] 
+                            document.getElementById("box").innerHTML = htmlText;
                         },
                         error: function(response) {
                             console.log(error); 
@@ -48,11 +48,12 @@
             function getUrlVars() {
                 var ret = '';
                 var parts = window.location.href;
-                let i = 52;
-                while(i < 62){
+                let i = 40;
+                while(i < 50){
                     ret = ret + parts[i];
                     i++;
                 }
+                //console.log(ret)
                 return ret;
             }
         </script>
