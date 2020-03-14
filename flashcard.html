@@ -19,7 +19,7 @@
         <script src="../assets/js/main.js"></script>
 
         <script>
-            let ENV = false;
+
             function ini_page(){
                 var date = getUrlVars();
                 console.log(date);
@@ -46,6 +46,7 @@
             }
 
             function getUrlVars() {
+                let ENV = false;
                 var ret = '';
                 var parts = window.location.href;
                 let i = 52;
