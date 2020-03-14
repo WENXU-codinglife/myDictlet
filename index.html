@@ -37,7 +37,7 @@
         <script>
         // load labels of flashcards
         function loadlabels(){
-            console.log("loadlabels");
+            //console.log("loadlabels");
             $(document).ready(function() {
                 var qurl="/passmelabels";
                 $.ajax({
@@ -48,7 +48,7 @@
                     dataType: "json",
                     //not understand what the codes are for
                     success: function(response) { 
-                        console.log(response); 
+                        //console.log(response); 
                         let htmlText = '' 
                         let n = response["count"];
                         let iidd = response["dates"];

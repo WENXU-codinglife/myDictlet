@@ -36,7 +36,7 @@ def passmelabels():
     #numberofcards = db.session.query(func.count(distinct(FLASHCARD.date))).count()
     labels = db.session.query(distinct(FLASHCARD.date)).all() # labels is a list of result objects
     numberofcards = len(labels)
-    print(numberofcards)
+    #print(numberofcards)
     passedlabels = []
     for i in labels:
         passedlabels.append(i[0])
