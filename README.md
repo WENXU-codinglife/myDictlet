@@ -50,6 +50,11 @@ LOG:<br/>
 1. Redirect from the links on 'index.html' to 'flashcard.html', passing the 'date' as parameter.
 2. By loading page 'flashcard.html', the words can show up, accociated with 'edifier.svg' and 'lookup.button'.
 
+20200314:<br/>
+1. Basically, all functions designed have been realized. **(NEXT STEP: OPTIMIZAZTION/MODIFICATION/UI DESIGN)**
+2. It is PI Day today!
+3. COVID-19 is spreading, as well as panic and nonsense!
+
  <mark>RELEVANT STUFFS TO LEARN:</mark>
 - [ ] Google for 'handlebar.js';
 - [x] (20200301) Try to use javascript to realize fetching json from API; 

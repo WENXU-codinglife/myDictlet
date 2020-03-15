@@ -23,7 +23,7 @@
         <p>***Click the "Lookup" button and the form-data will be sent to a page on the 
         server called "action_page.php".***</p>
         
-        <div id="demo" style="border: gray; background-color: honeydew;"></div>
+        <div id="definition" style="border: gray; background-color: honeydew;"></div>
 
         <div>flashcard</div>
         <div id = "labelofcard"></div>
@@ -102,7 +102,7 @@
                         //console.log(mydata[i].shortdef[j] + '\n');
                         jj = j+1;
                         htmlText +='<p>' + jj + '. ' +  mydata[i].shortdef[j] + '</p>';
-                        document.getElementById("demo").innerHTML = htmlText;
+                        document.getElementById("definition").innerHTML = htmlText;
                     }
                 }
             }
