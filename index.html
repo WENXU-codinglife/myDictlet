@@ -88,8 +88,9 @@
                 var mydata = JSON.parse(this.responseText);
                 //console.log(mydata);
                 let audio = mydata[0].hwi.prs[0].sound.audio;
-                let rcs = "https://media.merriam-webster.com/soundc11/" + word[0] + "/" + audio + ".wav";
+                let rcs = "https://media.merriam-webster.com/soundc11/" + word[0].toLowerCase() + "/" + audio + ".wav";
                 aAudio = new Audio(rcs);
+
 
                 htmlText += '<a onclick="myAudioFunction();"> <img src = "./images/edifier.svg" style = "width = "15px"; height = "15px""> </img> </a>';
                 let index = 0;
@@ -143,6 +144,7 @@
                                 if (confirm("The word '" + newword +"' has been added successfully!")) { 
                                 } else {
                                 } 
+                                location.reload();
                             }else{
                                 alert("WOOPS! There is something wrong!");
                             }
