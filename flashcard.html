@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background-image: url(../images/flashcard_bgp.jpg); height: 100%; width: 100%; background-repeat: no-repeat; background-size: cover;">
 <head>
+    <link rel="stylesheet" type="text/css" href="../assets/css/flashcard.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/general.css">
     <link rel="icon" href="../images/dict.svg" type="image/svg" sizes="16x16">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FLASHCARD</title>
 </head>
 <body onload="ini_page()">
-    <h1 id = "headone">FLASHCARD</h1>
-
-    <div id = "box"></div>
-    <div id = "definition" style="border: gray; background-color: honeydew;"></div>
-
-
+    <div class ="flashcard_body">
+        <h1 id = "headone">FLASHCARD</h1>
+        <div id = "box"></div>
+        <div id = "definition" class = "definition"></div>
+    </div>
+    <div class ="copyright">Copyright @ 2020 Xu Wen. All rights reserved.</div>
 
 		<!-- Scripts -->
         <script src="../assets/js/jquery.min.js"></script>
@@ -23,6 +25,7 @@
 
         <script>
         function ini_page(){
+            document.getElementById("navPanel").innerHTML = ''; //to vanish the "navPanel"
             var loc = window.location.href;
             console.log(loc);
             $(document).ready(function() {
@@ -42,7 +45,7 @@
                             console.log(response['words'][i]);
                             htmlText += '<div>' +
                             '<a onclick="extr(\'' + response['words'][i] + '\',\'audio\');"> ' +
-                            ' <img src = "../images/edifier.svg" style = "width = "15px"; height = "15px""> </img> </a>' +
+                            ' <img src = "../images/edifier.svg" style = "width = "20px"; height = "20px""> </img> </a>' +
                             '<button onclick="extr(\'' + response['words'][i] + '\',\'definition\');" id = "' 
                             + response['words'][i] + '">Lookup</button>' + '</div>'
                         }
@@ -97,5 +100,8 @@
         }
 //<--------------------------END--------------------------------->
         </script>
+
+            
+
 </body>
 </html>

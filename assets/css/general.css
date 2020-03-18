@@ -1,0 +1,7 @@
+div.copyright {
+    position: fixed;
+    left: 10;
+    bottom: 0;
+    color: black;
+    font-size: 15px;
+}

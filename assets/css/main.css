@@ -1,25 +1,40 @@
-<style>
-a:link {
-  color: green;
-  background-color: transparent;
-  text-decoration: none;
+html {
+  background-attachment: fixed;
+  height: 100%; 
+  width: 100%; 
+  background-repeat: no-repeat; 
+  background-size: cover;
 }
 
-a:visited {
-  color: pink;
-  background-color: transparent;
-  text-decoration: none;
+body {
+  text-align: center;
 }
 
-a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
+h1 {
+  color: navy;
+  margin-left: 0px;
+  font-style: initial;
+}
+h2 {
+  color: navy;
+  margin-left: 0px;
+  font-style: initial;
 }
 
-a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: underline;
+div.index_body {
+  background-color: rgba(224,225,225,0.3);
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 1px dotted gray;
+  padding: 10px 10px 10px 10px;
+  font-family: sans-serif;
 }
-</style>
+
+
+div.definition {
+  text-align: left;
+}
+
+

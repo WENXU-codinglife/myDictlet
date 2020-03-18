@@ -55,9 +55,16 @@ LOG:<br/>
 2. It is PI Day today!
 3. COVID-19 is spreading, as well as panic and nonsense!
 
+20200317:<br/>
+1. Add favicon.
+2. Vanish the "navPanel->undefined" in a dumb way.
+3. Add some elements and styles, such as background image, demonstration box, copyright, "fold" button, etc..
+
+
  <mark>RELEVANT STUFFS TO LEARN:</mark>
 - [ ] Google for 'handlebar.js';
 - [x] (20200301) Try to use javascript to realize fetching json from API; 
 - [x] (20200302) Deploy on a web server;
 - [ ] Clearify the concepts, modules, etc. of Heroku: [Procfile](https://devcenter.heroku.com/articles/procfile), [gunicorn](https://gunicorn.org/);
 - [ ] Learn about: [pgAdmin](https://www.pgadmin.org/),[postgresql](https://www.postgresql.org/);
+- [ ] Figure out what the "navPanel" is and where it is from.

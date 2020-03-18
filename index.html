@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  style="background-image: url(images/index_bgp.jpg);">
     <head>
+        <link rel="stylesheet" type="text/css" href="./assets/css/main.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/general.css">
         <link rel="icon" href="./images/dict.svg" type="image/svg" sizes="16x16">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,26 +12,27 @@
         </title>
     </head>
     <body onload="loadlabels()">
-        <h1 style="text-align:center;">
-            MyDictlet
-        </h1>
+        <div class = "index_body">
+            <h1 style="text-align:center;">
+                MyDictlet
+            </h1>
 
 
-        <p>Enter the word you want to know:</p>
-        <input type="text" id="new_word">
-        <button id = "btn">Lookup</button>
-        <button id = "add">Add to flashcard</button>
+            <p>Enter the word you want to know:</p>
+            <input type="text" id="new_word" style="margin-bottom: 10px;">
+            <div>
+                <button id = "btn">Lookup</button>
+                <button id = "fold">Fold</button>
+                <button id = "add">Add to flashcard</button>
+            </div>
+            <div id="definition" style="text-align: left;"></div>
 
-        
-        <p>***Click the "Lookup" button and the form-data will be sent to a page on the 
-        server called "action_page.php".***</p>
-        
-        <div id="definition" style="border: gray; background-color: honeydew;"></div>
-
-        <div>flashcard</div>
-        <div id = "labelofcard"></div>
-
-		<!-- Scripts -->
+            <h2>flashcard</h2>
+            <div id = "labelofcard"></div>
+            
+        </div>
+        <div class ="copyright">Copyright @ 2020 Xu Wen. All rights reserved.</div>
+        <!-- Scripts -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/skel.min.js"></script>
         <script src="assets/js/util.js"></script>
@@ -38,6 +41,7 @@
         <script>
         // load labels of flashcards
         function loadlabels(){
+            document.getElementById("navPanel").innerHTML = ''; //to vanish the "navPanel"
             //console.log("loadlabels");
             $(document).ready(function() {
                 var qurl="/passmelabels";
@@ -54,7 +58,7 @@
                         let n = response["count"];
                         let iidd = response["dates"];
                         for(let i = 0; i < n; i++){
-                            htmlText = htmlText + "<div id = '" + response['dates'][i] + "'><a  href='./flashcard.html/?x="+response['dates'][i]+"'>" + response['dates'][i] + "</a></div>";
+                            htmlText = htmlText + "<div class=\"date_label\" id = '" + response['dates'][i] + "'><a  href='./flashcard.html/?x="+response['dates'][i]+"'>" + response['dates'][i] + "</a></div>";
                         } 
                         document.getElementById("labelofcard").innerHTML = htmlText;
                     },
@@ -93,7 +97,7 @@
                 aAudio = new Audio(rcs);
 
 
-                htmlText += '<a onclick="myAudioFunction();"> <img src = "./images/edifier.svg" style = "width = "15px"; height = "15px""> </img> </a>';
+                htmlText += '<a onclick="myAudioFunction();"> <img src = "./images/edifier.svg" style = "width = "20px"; height = "20px""> </img> </a>';
                 let index = 0;
                 for(let i = 0; i < mydata.length; i++){
                     index = i + 1;
@@ -160,6 +164,18 @@
                 alert("Please enter the word that you want to add!");
             };
         })
+        </script>
+
+        <script>
+            let fold = document.getElementById("fold");
+            fold.addEventListener("click", function() {
+                console.log("fold!");
+                document.getElementById("definition").innerHTML = '';
+            })
+        </script>
+
+        <script>
+            document.getElementById("navPanel").innerHTML = '';
         </script>
 
     </body>
