@@ -60,6 +60,8 @@ LOG:<br/>
 2. Vanish the "navPanel->undefined" in a dumb way.
 3. Add some elements and styles, such as background image, demonstration box, copyright, "fold" button, etc..
 
+20200319:<br/>
+1. Add the error message, avoiding adding words which have already been added.
 
  <mark>RELEVANT STUFFS TO LEARN:</mark>
 - [ ] Google for 'handlebar.js';

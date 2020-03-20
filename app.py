@@ -81,6 +81,12 @@ def flashcard():
         db.session.add(data)
         db.session.commit()
         ret = {"feedback": True}
+    else:
+        lBooks = db.session.query(FLASHCARD)
+        for oBook in lBooks:
+            if oBook.word == newword:
+                ret = {"feedback": False,"date":oBook.date}
+                break
     return ret
 
 
