@@ -21,6 +21,17 @@ h2 {
   font-style: initial;
 }
 
+div.daily_quotes {
+  background-color: rgba(224,225,225,0.3);
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 1px dotted gray;
+  padding: 10px 10px 10px 10px;
+  font-family: sans-serif;
+}
+
 div.index_body {
   background-color: rgba(224,225,225,0.3);
   margin-left: 30%;
@@ -37,4 +48,14 @@ div.definition {
   text-align: left;
 }
 
-
+div.quote_context {
+  text-align: left;
+}
+div.quote_author {
+  text-align: right;
+}
+div.quote_link {
+  z-index:50;
+  font-size:0.9em; 
+  font-weight: bold;
+}

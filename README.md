@@ -63,10 +63,17 @@ LOG:<br/>
 20200319:<br/>
 1. Add the error message, avoiding adding words which have already been added.
 
+20200324:<br/>
+1. 'CORS error', when using another API to add a new component---'Daily Quotes'.
+
+20200409:<br/>
+1. Fix the 'CORS error' in an easy way that I'd like to summarize later.
+
  <mark>RELEVANT STUFFS TO LEARN:</mark>
 - [ ] Google for 'handlebar.js';
 - [x] (20200301) Try to use javascript to realize fetching json from API; 
 - [x] (20200302) Deploy on a web server;
 - [ ] Clearify the concepts, modules, etc. of Heroku: [Procfile](https://devcenter.heroku.com/articles/procfile), [gunicorn](https://gunicorn.org/);
 - [ ] Learn about: [pgAdmin](https://www.pgadmin.org/),[postgresql](https://www.postgresql.org/);
-- [ ] Figure out what the "navPanel" is and where it is from.
+- [ ] Figure out what the "navPanel" is and where it is from;
+- [x] [3 Ways to Fix the CORS Error](https://medium.com/@dtkatz/3-ways-to-fix-the-cors-error-and-how-access-control-allow-origin-works-d97d55946d9);

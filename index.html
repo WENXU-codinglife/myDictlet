@@ -11,6 +11,15 @@
         </title>
     </head>
     <body onload="loadlabels()">
+
+        <div class = "daily_quotes">
+            <div class="quotes" id = 'quotes'>
+                <div class="quote_context" id = "quote_context"></div>
+                <div class="quote_author" id = "quote_author"></div>
+                <div class = "quote_link" id = "quote_link"></div>
+            </div>
+        </div>
+
         <div class = "index_body">
             <h1 style="text-align:center;">
                 MyDictlet
@@ -30,6 +39,9 @@
             <div id = "labelofcard"></div>
             
         </div>
+
+
+
         <div class ="copyright">Copyright @ 2020 Xu Wen. All rights reserved.</div>
         <!-- Scripts -->
         <script src="assets/js/jquery.min.js"></script>
@@ -40,6 +52,7 @@
         <script>
         // load labels of flashcards
         function loadlabels(){
+            loadquotes();
             document.getElementById("navPanel").innerHTML = ''; //to vanish the "navPanel"
             //console.log("loadlabels");
             $(document).ready(function() {
@@ -70,7 +83,34 @@
         </script>
 
         <script>
-            // for the click on the links to individual flashcard.html
+        function loadquotes(){
+            var quotes = document.getElementById("quotes");
+            var request = new XMLHttpRequest()
+            var htmlText = '';
+            // Open a new connection, using the GET request on the URL endpoint
+            request.open('GET', 'https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json', true);
+            console.log('loadquotes()')
+            request.onload = function() {
+                console.log(this.responseText);
+                var mydata = JSON.parse(this.responseText);
+                console.log(mydata);
+                var quote_context = mydata['quoteText']; 
+                console.log(quote_context);
+                document.getElementById("quote_context").innerHTML = quote_context;
+                var quote_author = mydata['quoteAuthor'];
+                console.log(quote_author);
+                document.getElementById("quote_author").innerHTML = '------'+quote_author;
+                var quote_link = mydata['quoteLink'];
+                console.log(quote_link);
+                htmlText = '<a href="'+quote_link+'" \
+                title="Powered by quotes from forismatic.com" \
+                style="color: #ccc; margin-left: 4px; \
+                vertical-align: middle;">forismatic.com®</a>'
+                document.getElementById("quote_link").innerHTML = htmlText;
+            }
+            // Send request
+            request.send()                      
+        }
 
         </script>
 
