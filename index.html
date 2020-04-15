@@ -40,7 +40,10 @@
             
         </div>
 
-
+        <div class = "archive">
+            <p style="text-align: center; font-size: 20px;">Archive</p>
+            <div class="archive_list" id = 'archive_list'></div>
+        </div>
 
         <div class ="copyright">Copyright @ 2020 Xu Wen. All rights reserved.</div>
         <!-- Scripts -->
@@ -64,11 +67,14 @@
                     url: qurl,
                     dataType: "json",
                     //not understand what the codes are for
-                    success: function(response) { 
+                    success: function(response) {
                         //console.log(response); 
                         let htmlText = '' 
                         let n = response["count"];
                         let iidd = response["dates"];
+                        let nn = response["numberofmonthes"];
+                        let iiiddd = response["monthes"];
+                        loadarchives(nn,iiiddd);
                         for(let i = 0; i < n; i++){
                             htmlText = htmlText + "<div class=\"date_label\" id = '" + response['dates'][i] + "'><a  href='./flashcard.html/?x="+response['dates'][i]+"'>" + response['dates'][i] + "</a></div>";
                         } 
@@ -81,6 +87,20 @@
             });
         }
         </script>
+
+        <script>
+            function loadarchives(n,iidd){
+                let htmlText = '' ;
+                //console.log(n);
+                //console.log(iidd);
+                for(let i = 0; i < n; i++){
+                    htmlText = htmlText + "<div class=\"month_label\" id = '" + iidd[i] + "'><a  href='./flashcard.html/?x="+iidd[i]+"'>" + iidd[i] + "</a></div>";
+                } 
+                console.log(htmlText);
+                document.getElementById("archive_list").innerHTML = htmlText;
+            }
+        </script>
+
 
         <script>
         function loadquotes(){

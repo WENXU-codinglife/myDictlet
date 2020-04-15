@@ -13,14 +13,3 @@ for i in range(1,10):
 
 print(today)
 
-
-url = 'https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=json'
-
-response = requests.get(url)
-print(response)
-quotes = response.json()['quoteText']
-author = response.json()['quoteAuthor']
-link = response.json()['quoteLink']
-print(quotes)
-print(author)
-print(link)

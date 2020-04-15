@@ -68,6 +68,7 @@ LOG:<br/>
 
 20200409:<br/>
 1. Fix the 'CORS error' in an easy way that I'd like to summarize later.
+2. So the addtion of 'dailyquote' works well.
 
  <mark>RELEVANT STUFFS TO LEARN:</mark>
 - [ ] Google for 'handlebar.js';

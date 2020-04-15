@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func, distinct
 import datetime
 from pytz import timezone
-#import data
+from funcs import datetoday,differ_lists
 
 app = Flask(__name__, static_folder='', template_folder='')
 
@@ -34,34 +34,66 @@ def index():
 def passmelabels():
     #db.session.query(FLASHCARD).filter(FLASHCARD.word == newword).count() == 0:
     #numberofcards = db.session.query(func.count(distinct(FLASHCARD.date))).count()
-    labels = db.session.query(distinct(FLASHCARD.date)).all() # labels is a list of result objects
+    today = datetoday()
+    month = today[0:7]
+    #-------------flashcard labels
+
+    labels = db.session.query(distinct(FLASHCARD.date)).filter(FLASHCARD.date.like(month+'%')).all() # labels is a list of result objects
+    #labels = [('2020-03-25',), ('2020-03-24',), ('2020-03-29',), ('2020-03-21',)]
     numberofcards = len(labels)
     #print(numberofcards)
     passedlabels = []
     for i in labels:
+        #the format of i is like "('2020-03-25',)"
+        #the format of i[0] is like "2020-03-25"
+        #i[1] is out of range!
         passedlabels.append(i[0])
     #print(passedlabels)
+    #-------------archive labels
+    alllabels = db.session.query(distinct(FLASHCARD.date)).all()
+    otherlabels = differ_lists(alllabels,labels)
+    #print(otherlabels)
+    nameoffolders = []
+    for i in otherlabels:
+        if len(nameoffolders) == 0:
+            nameoffolders.append(i[0][0:7])
+        elif i[0][0:7] != nameoffolders[-1]:
+            nameoffolders.append(i[0][0:7])
+    numberoffolders = len(nameoffolders)
     ret = {
         "count":numberofcards,
-        "dates":passedlabels
+        "dates":passedlabels,
+        "numberofmonthes":numberoffolders,
+        "monthes":nameoffolders
         }
-    print(ret)
+    #print(ret)
+    #ret = {'count': 25, 'dates': ['2020-03-25', '2020-03-24', '2020-03-29', '2020-03-21', '2020-03-30', '2020-03-28', '2020-03-23', '2020-04-14', '2020-03-14', '2020-04-09', '2020-04-04', '2020-03-13', '2020-03-15', '2020-03-26', '2020-03-19', '2020-03-27', '2020-03-22', '2020-04-01', '2020-03-16', '2020-03-12', '2020-03-18', '2020-04-12', '2020-04-11', '2020-03-10', '2020-03-09']}
     return ret
 
 @app.route('/fetchwords',methods=['POST'])
 def fetchwords():
     loc = request.form['keyword']
     date = ''
-    i = -10
-    while(i < 0):
-        date = date + loc[i]
-        i = i + 1
-
+    month = ''
     words = []
-    lBooks = db.session.query(FLASHCARD)  #returns a Query object. 
-    for oBook in lBooks:
-        if oBook.date == date:
+    if loc[-12] == 'x':
+        i = -10
+        while(i < 0):
+            date = date + loc[i]
+            i = i + 1
+        lBooks = db.session.query(FLASHCARD)  #returns a Query object. 
+        for oBook in lBooks:
+            if oBook.date == date:
+                words.append(oBook.word)
+    elif loc[-9] == 'x':
+        i = -7
+        while(i < 0):
+            month = month + loc[i]
+            i = i + 1
+        lBooks = db.session.query(FLASHCARD).filter(FLASHCARD.date.like(month+'%'))  #returns a Query object. 
+        for oBook in lBooks:
             words.append(oBook.word)
+
     ret = {'number':len(words),'words':words}
     return ret
 

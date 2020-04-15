@@ -59,3 +59,14 @@ div.quote_link {
   font-size:0.9em; 
   font-weight: bold;
 }
+
+div.archive {
+  background-color: rgba(224,225,225,0.3);
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border: 1px dotted gray;
+  padding: 10px 10px 10px 10px;
+  font-family: sans-serif;
+}
