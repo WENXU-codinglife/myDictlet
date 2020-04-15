@@ -70,6 +70,10 @@ LOG:<br/>
 1. Fix the 'CORS error' in an easy way that I'd like to summarize later.
 2. So the addtion of 'dailyquote' works well.
 
+20200414:<br/>
+1. Add a new div called 'Archive' with links redirecting to the previous words categorized by month;
+2. So now the main 'flashcard' div only shows this month's words.
+
  <mark>RELEVANT STUFFS TO LEARN:</mark>
 - [ ] Google for 'handlebar.js';
 - [x] (20200301) Try to use javascript to realize fetching json from API; 
