@@ -48,7 +48,7 @@ def passmelabels():
         #the format of i[0] is like "2020-03-25"
         #i[1] is out of range!
         passedlabels.append(i[0])
-    passmelabels.sort()
+    passedlabels.sort()
     #print(passedlabels)
     #-------------archive labels
     alllabels = db.session.query(distinct(FLASHCARD.date)).all()
