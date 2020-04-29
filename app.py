@@ -60,6 +60,7 @@ def passmelabels():
             nameoffolders.append(i[0][0:7])
         elif i[0][0:7] != nameoffolders[-1]:
             nameoffolders.append(i[0][0:7])
+    nameoffolders.sort()
     numberoffolders = len(nameoffolders)
     ret = {
         "count":numberofcards,
