@@ -53,6 +53,7 @@ def passmelabels():
     #-------------archive labels
     alllabels = db.session.query(distinct(FLASHCARD.date)).all()
     otherlabels = differ_lists(alllabels,labels)
+    otherlabels.sort()
     #print(otherlabels)
     nameoffolders = []
     for i in otherlabels:
@@ -68,8 +69,7 @@ def passmelabels():
         "numberofmonthes":numberoffolders,
         "monthes":nameoffolders
         }
-    print(ret)
-    #ret = {'count': 25, 'dates': ['2020-03-25', '2020-03-24', '2020-03-29', '2020-03-21', '2020-03-30', '2020-03-28', '2020-03-23', '2020-04-14', '2020-03-14', '2020-04-09', '2020-04-04', '2020-03-13', '2020-03-15', '2020-03-26', '2020-03-19', '2020-03-27', '2020-03-22', '2020-04-01', '2020-03-16', '2020-03-12', '2020-03-18', '2020-04-12', '2020-04-11', '2020-03-10', '2020-03-09']}
+    #print(ret)
     return ret
 
 @app.route('/fetchwords',methods=['POST'])
