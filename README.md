@@ -1,10 +1,10 @@
 README.md<br/>
 myDictlet: [clickme](https://mydictlet-0.herokuapp.com/)<br/>
-This is a personal project that mainly make use of Python, HTML, JS, CSS, Heroku and PostgreSQL.<br/>
+This is a personal project that is built on Python, HTML, JS, CSS, Heroku and PostgreSQL.<br/>
 
-I have been working on this project, because, as an non-native English speaker, I have to keep learning and praticing English each single day. However, I have found that it is an obstale that I am used to memorizing English words by 'seeing' rather than 'hearing'. That is, sometimes I am able to recognize a word immediately when seeing it, but not when merely hearing it, even for those are quite commom like 'economic' or 'privilege'. So, I decided to make this handy tool to help me building vocabulary be directly connecting the pronoucation and definition without prioritizing the spelling. The new words are stored by the date and could reviewed anytime to check.<br/>
+I have been working on this project, because, as an non-native English speaker, I have to keep learning and praticing English each single day. However, I have found that it is an obstale that I am used to memorizing English words by 'seeing' rather than 'hearing'. That is, sometimes I am able to recognize a word immediately when seeing it, but not when merely hearing it, even for those are quite commom like 'economic' or 'privilege'. So, I decided to make this handy tool to help me build vocabulary by directly connecting the pronoucation and definition without prioritizing the spelling. The new words are stored by the date and can reviewed anytime.<br/>
 
-This is an easy-going web application deployed on Heroku so that it is accessable with any devices as long as the Internet is available. And the words are stored and managed with PostgreSQL as an Add-on in Heroku.<br/>
+This is an easy-going web application deployed on Heroku so that it is accessable with any devices as long as the Internet is available. And the words are stored and managed with PostgreSQL as an Add-on on Heroku.<br/>
 As I am self-taugth developing the entire project, I feel so excited and proud, even though it is not huge.<br/>
 
 In next step, I plan to add registration module and provide individual 'vocabulary-base' for more English learners like me who are in need of it. Really hope it could help more people.<br/>
