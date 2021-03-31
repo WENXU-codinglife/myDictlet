@@ -108,9 +108,7 @@
             var request = new XMLHttpRequest()
             var htmlText = '';
             // Open a new connection, using the GET request on the URL endpoint
-            // cors-anywhere limits the access
-            // request.open('GET', 'https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&lang=en&format=json', true);
-            request.open('GET', 'https://netnr-proxy.cloudno.de/https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&lang=en&format=json', true);
+            request.open('GET', 'https://cors-anywhere.herokuapp.com/https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&lang=en&format=json', true);
             console.log('loadquotes()')
             request.onload = function() {
                 console.log(this.responseText);
